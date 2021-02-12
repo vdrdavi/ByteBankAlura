@@ -10,20 +10,19 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            Metodo();
-            Console.ReadLine();
+
+        }
+        public static int Dividir(int numero, int divisor)
+        {
+            return numero / divisor;
         }
         static void Metodo()
         {
             TestaDivisao(0);
         }
-        static void TestaDivisao(int divisor)
+        static void TestaDivisao (int divisor)
         {
             Dividir(10, divisor);
-        }
-        public static int Dividir(int numero, int divisor)
-        {
-            return numero / divisor;
         }
     }
 }
