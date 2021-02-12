@@ -14,9 +14,10 @@ namespace ByteBank
             {
                 Metodo();
             }
-            catch (DivideByZeroException)
+            catch (DivideByZeroException execao)
             {
-                Console.WriteLine("Exceção tratada.");
+                Console.WriteLine(execao.Message);
+                Console.WriteLine(execao.StackTrace);
             }
             Console.ReadLine();
         }
