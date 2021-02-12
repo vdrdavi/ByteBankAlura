@@ -10,7 +10,15 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-
+            try
+            {
+                Metodo();
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Exceção tratada.");
+            }
+            Console.ReadLine();
         }
         public static int Dividir(int numero, int divisor)
         {
