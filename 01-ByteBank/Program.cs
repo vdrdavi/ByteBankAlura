@@ -18,10 +18,10 @@ namespace ByteBank
             {
                 Console.WriteLine("Não é possível divisão por zero");
             }
-            catch (Exception excecao)
+            catch (Exception e)
             {
-                Console.WriteLine(excecao.Message);
-                Console.WriteLine(excecao.StackTrace);
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
             }
             Console.ReadLine();
         }
