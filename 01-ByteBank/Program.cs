@@ -14,6 +14,10 @@ namespace ByteBank
             {
                 Metodo();
             }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Não é possível divisão por zero");
+            }
             catch (Exception excecao)
             {
                 Console.WriteLine(excecao.Message);
@@ -32,9 +36,15 @@ namespace ByteBank
         }
         public static int Dividir(int numero, int divisor)
         {
-            ContaCorrente conta = null;
-            Console.WriteLine(conta.Saldo);
-            return numero / divisor;
+            try
+            {
+                return numero / divisor;
+            }
+            catch
+            {
+                Console.WriteLine("Exceção com numero=" + numero + "e divisor=" + divisor);
+                throw;
+            }
         }
     }
 }
