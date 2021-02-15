@@ -14,25 +14,22 @@ namespace ByteBank
             {
                 Metodo();
             }
-            catch (DivideByZeroException execao)
+            catch (DivideByZeroException excecao)
             {
-                Console.WriteLine(execao.Message);
-                Console.WriteLine(execao.StackTrace);
-            }
-            Console.ReadLine();
-        }
-        
-        static void Metodo()
-        {
-            try
-            {
-                TestaDivisao(0);
+                Console.WriteLine(excecao.Message);
+                Console.WriteLine(excecao.StackTrace);
             }
             catch (NullReferenceException excecao)
             {
                 Console.WriteLine(excecao.Message);
                 Console.WriteLine(excecao.StackTrace);
             }
+            Console.ReadLine();
+        }
+        
+        static void Metodo()
+        {
+                TestaDivisao(0);
         }
         static void TestaDivisao (int divisor)
         {
