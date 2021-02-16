@@ -12,6 +12,16 @@ namespace ByteBank
         {
             try
             {
+                ContaCorrente conta = new ContaCorrente(0, 0);
+            }
+            catch(ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ParamName);
+            }
+
+            try
+            {
                 Metodo();
             }
             catch (DivideByZeroException)
@@ -42,7 +52,7 @@ namespace ByteBank
             }
             catch
             {
-                Console.WriteLine("Exceção com numero=" + numero + "e divisor=" + divisor);
+                Console.WriteLine("Exceção com numero=" + numero + " e divisor=" + divisor);
                 throw;
             }
         }
