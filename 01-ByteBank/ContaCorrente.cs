@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByteBank
 {
@@ -10,23 +6,8 @@ namespace ByteBank
     {
         public static int TotalDeContasCriadas { get; private set; }
         public Cliente Titular { get; set; }
-        private int _agencia;
-        public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    return;
-                }
-                _agencia = value;
-            }
-        }
-        public int Numero { get; set; }
+        public int Agencia { get; }
+        public int Numero { get; }
 
         public ContaCorrente(int agencia, int numero)
         {
@@ -72,7 +53,7 @@ namespace ByteBank
                 Console.WriteLine("Valor a depositar deve ser maior que zero");
             }
             else
-            _saldo += valor;
+                _saldo += valor;
         }
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
