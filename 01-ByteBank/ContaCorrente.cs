@@ -11,6 +11,16 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
+            if (agencia <= 0)
+            {
+                throw new ArgumentException();
+            }
+
+            if (numero <= 0)
+            {
+                throw new ArgumentException();
+            }
+
             Agencia = agencia;
             Numero = numero;
             TotalDeContasCriadas++;
