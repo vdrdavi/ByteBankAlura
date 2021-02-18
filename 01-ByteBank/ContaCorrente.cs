@@ -68,15 +68,17 @@ namespace ByteBank
             else
                 _saldo += valor;
         }
-        public bool Transferir(double valor, ContaCorrente contaDestino)
+        public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (_saldo < valor)
-                return false;
+            if (valor < 0)
+            {
+                throw new ArgumentException("Valor de transferência não pode ser negativo", nameof(valor));
+            }
             else
             {
-                _saldo -= valor;
+                Sacar(valor);
                 contaDestino.Depositar(valor);
-                return true;
+
             }
         }
     }
