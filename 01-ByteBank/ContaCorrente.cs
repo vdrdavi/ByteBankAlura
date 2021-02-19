@@ -9,6 +9,8 @@ namespace ByteBank
         public Cliente Titular { get; set; }
         public int Agencia { get; }
         public int Numero { get; }
+        
+        public int ContadorSaquesNaoPermitidos { get; private set; }
 
         public ContaCorrente(int agencia, int numero)
         {
@@ -54,6 +56,7 @@ namespace ByteBank
             }            
             if (_saldo < valor)
             {
+                ContadorSaquesNaoPermitidos++;
                 throw new SaldoInsuficienteException(_saldo, valor);
             }
             else
@@ -78,7 +81,6 @@ namespace ByteBank
             {
                 Sacar(valor);
                 contaDestino.Depositar(valor);
-
             }
         }
     }
