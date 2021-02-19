@@ -11,6 +11,7 @@ namespace ByteBank
         public int Numero { get; }
         
         public int ContadorSaquesNaoPermitidos { get; private set; }
+        public int ContadorTransferenciasNaoPermitidas { get; private set; }
 
         public ContaCorrente(int agencia, int numero)
         {
@@ -79,7 +80,15 @@ namespace ByteBank
             }
             else
             {
-                Sacar(valor);
+                try
+                {
+                    Sacar(valor);
+                }
+                catch (SaldoInsuficienteException)
+                {
+                    ContadorTransferenciasNaoPermitidas++;
+                    throw;
+                }
                 contaDestino.Depositar(valor);
             }
         }
