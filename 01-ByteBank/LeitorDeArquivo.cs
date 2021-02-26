@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ByteBank
 {
-    class LeitorDeArquivo
+    class LeitorDeArquivo : IDisposable
     {
         public string Arquivo { get; }
 
@@ -27,7 +27,7 @@ namespace ByteBank
             return "Linha do arquivo";
         }
 
-        public void Fechar()
+        public void Dispose()
         {
             Console.WriteLine("Fechando arquivo.");
         }

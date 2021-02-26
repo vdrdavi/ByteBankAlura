@@ -16,24 +16,11 @@ namespace ByteBank
         }
         private static void CarregarContas()
         {
-            LeitorDeArquivo leitor = null;
-            try
+            using (LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt"))
             {
-                leitor = new LeitorDeArquivo("contas.txt");
                 leitor.LerProximaLinha();
                 leitor.LerProximaLinha();
                 leitor.LerProximaLinha();
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine("Exceção do tipo IOexception capturada e tratada");
-            }
-            finally
-            {
-                if (leitor != null)
-                {
-                    leitor.Fechar();
-                }
             }
         }
     }
