@@ -15,7 +15,7 @@ namespace ByteBank
         {
             Arquivo = arquivo;
 
-            throw new FileNotFoundException();
+            //throw new FileNotFoundException();
             Console.WriteLine("Abrindo arquivo: " + arquivo);
         }
 
@@ -23,7 +23,7 @@ namespace ByteBank
         {
             Console.WriteLine("Lendo linha...");
 
-            throw new IOException();
+            //throw new IOException();
             return "Linha do arquivo";
         }
 
