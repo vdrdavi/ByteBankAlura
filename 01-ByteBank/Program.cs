@@ -16,9 +16,10 @@ namespace ByteBank
         }
         private static void CarregarContas()
         {
-            LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
+            LeitorDeArquivo leitor = null;
             try
             {
+                leitor = new LeitorDeArquivo("contas.txt");
                 leitor.LerProximaLinha();
                 leitor.LerProximaLinha();
                 leitor.LerProximaLinha();
@@ -29,7 +30,10 @@ namespace ByteBank
             }
             finally
             {
-                leitor.Fechar();
+                if (leitor != null)
+                {
+                    leitor.Fechar();
+                }
             }
         }
     }
